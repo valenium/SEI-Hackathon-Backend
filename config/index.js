@@ -1,7 +1,5 @@
 const { TMDB_BEARER } = process.env
 
-console.log({TMDB_BEARER})
-
 const options = {
     method: 'GET',
     headers: {
