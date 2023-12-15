@@ -10,7 +10,6 @@ async function index() {
     try {     
         const response = await fetch(config.API_KEY, config.options)
         const data = await response.json()
-        // console.log(data)
 
         const movieData = data.results.map(movie => {
             return {
@@ -26,11 +25,17 @@ async function index() {
                 voteCount: movie.vote_count
             }
         })
-        res.json(movieData)
+        response.json(movieData)
     } catch(err) {
         console.log(err)
+        response.status(400).json({error: err.message})
     }
 }
 
 async function show(req,res,next) {
+    try{
+
+    }catch(err){
+
+    }
 }
